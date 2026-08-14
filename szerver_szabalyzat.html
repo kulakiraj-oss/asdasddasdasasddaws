@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuideMTA - Szerver Szabályzat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #111317;
+            color: #e1e6ed;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .toc-title {
+            font-size: 1.2rem;
+            color: #2ecc71;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Lenyíló kategóriák (Accordion) */
+        details {
+            background-color: #1a1d24;
+            border: 1px solid #282c37;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: background-color 0.2s;
+        }
+
+        details[open] {
+            background-color: #20242e;
+            border-color: #2ecc71;
+        }
+
+        summary {
+            padding: 16px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: #d1d5db;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        summary:hover {
+            color: #2ecc71;
+            background-color: rgba(46, 204, 113, 0.05);
+        }
+
+        summary::after {
+            content: '▼';
+            font-size: 0.8rem;
+            transition: transform 0.2s;
+            color: #6b7280;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+            color: #2ecc71;
+        }
+
+        .content {
+            padding: 20px;
+            border-top: 1px solid #282c37;
+            color: #a0aec0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .content ul {
+            padding-left: 20px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            color: #2ecc71;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-logo">
+            <img src="./logo.png" alt="GuideMTA Logo">
+        </div>
+
+        <h1>GuideMTA Szerver Szabályzat</h1>
+
+        <div class="toc-title">Tartalomjegyzék</div>
+
+        <!-- Lenyíló kategóriák -->
+        <details>
+            <summary>Kommunikációt elősegítő szavak, fogalmak</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>RP (RolePlay):</strong> Karakteralakítás a valóságnak megfelelően.</li>
+                    <li><strong>IC (In Character):</strong> A karaktereden belüli történések és kommunikáció.</li>
+                    <li><strong>OOC (Out of Character):</strong> Karakteren kívüli, valós életbeli kommunikáció.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Általános parancsok</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>/me [cselekvés]:</strong> Látványos cselekvés leírása, amit az animáció nem mutat.</li>
+                    <li><strong>/do [történés]:</strong> Tények, történések közlése, amit nem közvetlenül te csinálsz.</li>
+                    <li><strong>/ame [gondolat/megjegyzés]:</strong> Karakter feletti vizuális megjegyzés.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Frakció parancsok</summary>
+            <div class="content">
+                <p>A frakcióparancsok kizárólag a frakciótagok számára érhetőek el az adott szolgálati körben.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Általános szabályok / Fogalmak</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>DM (Deathmatch):</strong> Indok nélküli emberölés – Szigorúan tilos!</li>
+                    <li><strong>RK (ReKill):</strong> Halál utáni bosszúállás – Tilos!</li>
+                    <li><strong>PG (PowerGaming):</strong> Hősködés, irreális cselekedet – Tilos!</li>
+                    <li><strong>MG (MetaGaming):</strong> OOC információ IC felhasználása – Tilos!</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Adminokkal kapcsolatos információk, szabályok</summary>
+            <div class="content">
+                <p>Az adminisztrátorok feladata a szerver rendjének és a játékosok közötti tiszteletnek a fenntartása. Az adminügyek során a tisztelettudó magatartás kötelező.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Accountra/karakterre vonatkozó szabályok</summary>
+            <div class="content">
+                <p>Minden játékos saját maga felel a saját fiókjáért. Fiók megosztása vagy eladása szigorúan tilos.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Benzinkút Rablásra vonatkozó szabályok</summary>
+            <div class="content">
+                <p>Benzinkutat rabolni csak megfelelő létszámú rendvédelmi jelenlét esetén engedélyezett.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Gyárra vonatkozó szabályok</summary>
+            <div class="content">
+                <p>A gyárterületen történő illegális tevékenységek különös körültekintést igényelnek.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Lövöldözéssel / Illegális tevékenységekkel kapcsolatos szabályok</summary>
+            <div class="content">
+                <p>Minden fegyveres konfliktushoz alapos IC indok szükséges.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Frakciókkal kapcsolatos szabályok</summary>
+            <div class="content">
+                <p>Szervezett frakciók belső szabályzatukat és a szerverszabályzatot egyaránt kötelesek betartani.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Forgalmas helyek</summary>
+            <div class="content">
+                <p>Kórház, Városháza, Autókereskedés és Rendőrség előtti tér forgalmas helynek/védett övezetnek számít!</p>
+            </div>
+        </details>
+
+        <a href="szabalyzat.html" class="back-btn">← Vissza a szabályzat választóhoz</a>
+    </div>
+
+</body>
+</html>
